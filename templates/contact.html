@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Contact</h1>
+<h3>{{ title|title }}</h3>
+
+<p>this is template</p>
+<p>
+{{ my_text }}, {{ Address }}
+</p>
+<ul>
+{% for my_sub_item in my_list %}
+	{% if my_sub_item == 3212 %}
+		<li>{{ forloop.counter }} - {{ my_sub_item|add:2000 }}</li>
+	{% elif my_sub_item == 3213 %}
+		<li>{{ forloop.counter }} - {{ my_sub_item|add:11 }}</li>
+	{% else %}
+		<li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+{% endblock content %}
